@@ -42,6 +42,8 @@
 namespace libntfslinks
 {
 
+LIBNTFS_API wchar_t *ConvertCharArrayToLPCWSTR(const char* charArray);
+
 /**
  * Determines if the specified path is a valid NTFS junction (reparse point).
  *
