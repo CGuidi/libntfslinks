@@ -33,6 +33,12 @@
 
 #include <Windows.h>
 
+#ifdef LIBNTFS_EXPORTS
+#define LIBNTFS_API extern "C" __declspec(dllexport)
+#else
+#define LIBNTFS_API extern "C" __declspec(dllimport)
+#endif
+
 namespace libntfslinks
 {
 
@@ -42,7 +48,7 @@ namespace libntfslinks
  * @param Path The path to verify is a junction.
  * @return Returns true if the specified path is a valid NTFS junction, otherwise false.
  */
-bool IsJunction(LPCTSTR Path);
+LIBNTFS_API bool IsJunction(LPCTSTR Path);
 
 /**
  * Retrieves the target path for the specified NTFS junction.
@@ -52,7 +58,7 @@ bool IsJunction(LPCTSTR Path);
  * @param TargetSize The size of the TargetPath buffer.
  * @return Returns zero if the operation was successful, otherwise a non-zero value if an error occurred.
  */
-DWORD GetJunctionTarget(LPCTSTR Path, LPTSTR TargetPath, size_t TargetSize);
+LIBNTFS_API DWORD GetJunctionTarget(LPCTSTR Path, LPTSTR TargetPath, size_t TargetSize);
 
 /**
  * Creates a new NTFS junction at the specified link path which points to the given target path.
@@ -61,7 +67,7 @@ DWORD GetJunctionTarget(LPCTSTR Path, LPTSTR TargetPath, size_t TargetSize);
  * @param Target The destination path that the new junction will point to.
  * @return Returns zero if the operation was successful, otherwise a non-zero value if an error occurred.
  */
-DWORD CreateJunction(LPCTSTR Link, LPCTSTR Target);
+LIBNTFS_API DWORD CreateJunction(LPCTSTR Link, LPCTSTR Target);
 
 /**
  * Deletes an NTFS junction at the specified path location.
@@ -69,7 +75,7 @@ DWORD CreateJunction(LPCTSTR Link, LPCTSTR Target);
  * @param Path The path of the NTFS junction to delete.
  * @return Returns zero if the operation was successful, otherwise a non-zero value if an error occurred.
  */
-DWORD DeleteJunction(LPCTSTR Path);
+LIBNTFS_API DWORD DeleteJunction(LPCTSTR Path);
 
 } // namespace libntfslinks
 
