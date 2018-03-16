@@ -27,12 +27,12 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "Junction.h"
+#include "junction.h"
 
 #include <strsafe.h>
 #include <winioctl.h>
 
-#include "CharUtils.h"
+#include "charutils.h"
 #include "ntfstypes.h"
 
 #ifndef max

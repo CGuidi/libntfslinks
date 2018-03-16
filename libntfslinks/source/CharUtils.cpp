@@ -27,7 +27,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "CharUtils.h"
+#include "charutils.h"
 
 #include <strsafe.h>
 #include <minwindef.h>
